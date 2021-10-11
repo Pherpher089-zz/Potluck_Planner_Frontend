@@ -1,7 +1,7 @@
 import axios from "axios";
 require('dotenv').config();
 
-const url = process.env.REACT_APP_URL || "http://localhost:5000";
+const url = process.env.REACT_APP_URL || "https://potluck-planner-chris-tutor.herokuapp.com";
 
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
@@ -36,6 +36,6 @@ export const register = (regObj) => (dispatch) => {
             `${url}/api/auth/register`,
             regObj
         )
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+        .then((res) => console.log(res.data, "USER!"))
+        .catch((err) => console.log(err, "ERROR"));
 };
